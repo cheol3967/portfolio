@@ -197,15 +197,15 @@ body {
 
 .section02 h3 {
   font-size: 60px;
-  padding: 100px;
-  margin-top: 60px;
-  text-align: center;
+  margin: 60px 0 20px;
+  text-align: left;
 }
 .section02 .inner {
   max-width: 1440px;
   width: calc(100% - 40px);
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   gap: 100px;
 }
 
@@ -402,7 +402,15 @@ body {
   background-color: #FBC22B;
   font-weight: 800;
 }
-
+.section04 {
+  width: 100%;
+  background-image: url("../img/sectionbg.png"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  padding-bottom: 260px;
+  
+}
 .section04 h3 {
   font-size: 60px;
   padding: 100px;
