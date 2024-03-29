@@ -1,11 +1,496 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>portfolio</title>
+
+  <script src="js/main.js"></script>
+  <link rel="stylesheet" href="css/portfolio.css" />
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sectionLinks = document.querySelectorAll(".section-link");
+      sectionLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          const target = this.dataset.target;
+          const section = document.querySelector(target);
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const paragraphs = document.querySelectorAll('.section03_text p');
+
+    paragraphs.forEach(function(paragraph) {
+        paragraph.addEventListener('click', function() {
+            // 현재 클릭된 p 요소의 z-index 값을 가져옴
+            const currentZIndex = parseInt(window.getComputedStyle(this).getPropertyValue('z-index'));
+
+            // 모든 p 요소의 z-index 값을 초기화
+            paragraphs.forEach(function(p) {
+                p.style.zIndex = 'auto';
+            });
+
+            // 클릭된 p 요소가 이미 가장 위에 있는 경우에는 동작하지 않음
+            if (currentZIndex >= paragraphs.length) return;
+
+            // 클릭된 p 요소의 z-index 값을 가장 높은 값으로 설정
+            this.style.zIndex = paragraphs.length;
+        });
+    });
+});
+
+// JavaScript로 클릭 이벤트 처리
+document.addEventListener('DOMContentLoaded', function() {
+    const paragraphElements = document.querySelectorAll('.section03_text p'); // 모든 p 요소 선택
+
+    paragraphElements.forEach(function(paragraph) {
+        paragraph.addEventListener('click', function() {
+            // 클릭된 p 요소의 클래스를 변경하여 이미지와 Flex 아이템의 표시 여부 조절
+            const index = parseInt(this.className.replace('b', '')) - 1; // 클래스 이름에서 숫자 추출
+            const images = document.querySelectorAll('.section03_img');
+            const flexItems = document.querySelectorAll('.section03_flex');
+
+            // 이미지 표시 여부 설정
+            images.forEach(function(image, i) {
+                if (i === index) {
+                    image.classList.add('on');
+                } else {
+                    image.classList.remove('on');
+                }
+            });
+
+            // Flex 아이템의 표시 여부 설정
+            flexItems.forEach(function(item, i) {
+                if (i === index) {
+                    item.classList.add('on');
+                } else {
+                    item.classList.remove('on');
+                }
+            });
+        });
+    });
+});
+  </script>
 </head>
+
 <body>
-  
+  <header class="header">
+    <div class="inner">
+      <h1>
+        <figure><img src="img/cheol.png" alt="로고1" /></figure>
+      </h1>
+      <ul>
+        <li class="section-link" data-target=".section01">
+          <figure><img src="img/h1.png" alt="Home" /></figure>
+          <span>Home</span>
+        </li>
+        <li class="section-link" data-target=".section02">
+          <figure><img src="img/h2.png" alt="Profile" /></figure>
+          <span>Profile</span>
+        </li>
+        <li class="section-link" data-target=".section03">
+          <figure><img src="img/h3.png" alt="Web Redesign" /></figure>
+          <span>Web Redesign</span>
+        </li>
+        <li class="section-link" data-target=".section04">
+          <figure><img src="img/h4.png" alt="Design" /></figure>
+          <span>Design</span>
+        </li>
+        <li class="section-link" data-target=".section05">
+          <figure><img src="img/h5.png" alt="Thanks" /></figure>
+          <span>Thanks</span>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <section class="section section01">
+    <div class="image-container">
+      <img src="img/1page.png" alt="빛나는사진" />
+    </div>
+    <ul class="text-container">
+      <li class="hoverable-text">Welcome to my UI/UX</li>
+      <h2 class="hoverable-text">Design Universe</h2>
+      <li class="hoverable-text">
+        새로운 우주는 무한하고 끝없는 가능성을 가지고있습니다.
+      </li>
+      <li class="hoverable-text">김 민 철 's Portfolio</li>
+    </ul>
+  </section>
+  <!-- sec01 end -->
+
+  <section class="section section02">
+    <figure><img src="img/h2.png" alt="" /></figure>
+    <div class="inner">
+      <div class="section02_L">
+        <h3>Profile</h3>
+        <figure><img src="img/임시.png" alt="" /></figure>
+
+        <div class="section02_text">
+          <ul class="section02_text_L">
+            <li>NAME</li>
+            <li>BIRTH</li>
+            <li>PHONE</li>
+            <li>EMAIL</li>
+          </ul>
+          <ul class="section02_text_R">
+            <li>김민철</li>
+            <li>1994.12.28</li>
+            <li>010-7139-3960</li>
+            <li>mincheol3960@gmail.com</li>
+          </ul>
+        </div>
+        <!-- sec02.text end -->
+      </div>
+      <!-- sec02_L end -->
+
+      <div class="section02_R">
+        <h4>“긍정” “도전” “소통” “변화”</h4>
+        <h4>“긍정” “도전” “소통” “변화”</h4>
+        <ul>
+          EDUCATION
+          <li>23.02연암공과대학</li>
+          <li>23.02연암공과대학</li>
+        </ul>
+        <ul>
+          CERTIFICATE
+          <li>ddd</li>
+          <li>ddd</li>
+        </ul>
+        <ul>
+          CAREER
+          <li>sss</li>
+          <li>sss</li>
+        </ul>
+        <ul class="skill">
+          <div>SKILL</div>
+          <li>
+            <figure><img src="img/sk1.png" alt="" /></figure>
+          </li>
+          <li>
+            <figure><img src="img/sk2.png" alt="" /></figure>
+          </li>
+          <li>
+            <figure><img src="img/sk3.png" alt="" /></figure>
+          </li>
+          <li>
+            <figure><img src="img/sk4.png" alt="" /></figure>
+          </li>
+          <li>
+            <figure><img src="img/sk5.png" alt="" /></figure>
+          </li>
+          <li>
+            <figure><img src="img/sk6.png" alt="" /></figure>
+          </li>
+          <li>
+            <figure><img src="img/sk7.png" alt="" /></figure>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- inner end -->
+  </section>
+  <!-- sec02 end-->
+
+
+  <section class="section section03">
+    <h3>Web Design</h3>
+    <div class="section03_position">
+      <div class="section03_text">
+        <p class="b1">Scott<br/>Hamish</p>
+        <p class="b2">Luminous<br/>Legacy</p>
+        <p class="b3">F5NATUR</p>
+        <p class="b4">KB<br/>국민카드</p>
+        <p class="b5">Megastudy<br/>Books</p>
+        <p class="b6">Scott Hamish</p>
+      </div>
+
+      <figure class="section03_img on">
+        <img src="img/section3_a.png" alt="테두리및 배경" />
+      </figure>
+      <figure class="section03_img">
+        <img src="img/section3_b.png" alt="테두리및 배경" />
+      </figure>
+      <figure class="section03_img">
+        <img src="img/section3_c.png" alt="테두리및 배경" />
+      </figure>
+      <figure class="section03_img">
+        <img src="img/section3_d.png" alt="테두리및 배경" />
+      </figure>
+      <figure class="section03_img">
+        <img src="img/section3_e.png" alt="테두리및 배경" />
+      </figure>
+      <figure class="section03_img">
+        <img src="img/section3_b.png" alt="테두리및 배경" />
+      </figure>
+
+
+      <div class="section03_flex on">
+        <figure><img src="img/ba.png" alt="홈페이지사진" /></figure>
+
+        <div>
+          <div class="section03_text_box">
+            <div class="section03_text_L">
+              <p>사이트명</p>
+              <p>제작기간</p>
+              <p>참여</p>
+              <p>페이지</p>
+              <p>툴</p>
+            </div>
+            <div class="section03_text_R">
+              <p>Scott Hamish</p>
+              <p>5일</p>
+              <p>디자인,퍼블리싱 (100%)</p>
+              <p>반응형 메인 (pc+mobile)</p>
+              <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
+            </div>
+          </div><!-- text box end -->
+
+          <span>
+            메인페이지를 블랙으로 바꾸고 제품소개 부분을 바꾸어 <br/>
+            제품을 확인하기 쉽게 리디자인하였습니다.
+          </span>
+
+          <div class="section03_tag">
+            <a class="b1" href="https://cheol3967.github.io/ScottHamish/">완성된웹사이트</a>
+            <a class="b1" href="https://www.figma.com/file/Ykt0ffks2YIX12OGMpXsUy/ScottHamish?type=design&node-id=0-1&mode=design&t=7Yp4qy2yGFwbFMWS-0">피그마</a>
+            <a class="b1" href="PDF/scotthamish.pdf">Process</a>
+          </div>
+        </div>
+      </div><!-- flex1 end🍕 -->
+
+      <div class="section03_flex ">
+        <figure><img src="img/LuminousLegacy.png" alt="홈페이지사진" /></figure>
+
+        <div>
+          <div class="section03_text_box">
+            <div class="section03_text_L">
+              <p>사이트명</p>
+              <p>제작기간</p>
+              <p>참여</p>
+              <p>페이지</p>
+              <p>툴</p>
+            </div>
+            <div class="section03_text_R">
+              <p>LuminousLegacy</p>
+              <p>5일</p>
+              <p>디자인,퍼블리싱 (100%)</p>
+              <p>반응형 메인 (pc+mobile)</p>
+              <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
+            </div>
+          </div><!-- text box end -->
+
+          <span>
+            반응형에 맞춰 pc및 pad,mobile <br/>
+            사이트를 자체제작하였습니다.
+          </span>
+
+          <div class="section03_tag">
+            <a class="b2" href="https://cheol3967.github.io/LuminousLegacy/">완성된웹사이트</a>
+            <a class="b2" href="https://www.figma.com/file/R0uQox93SnTJAOquthQcOg/LuminousLegacy?type=design&node-id=0-1&mode=design&t=nwhd8EbTOsUL21tl-0">피그마</a>
+          </div>
+        </div>
+      </div><!-- flex2 end🍕🍕 -->
+
+      <div class="section03_flex ">
+        <figure><img src="img/f5nature.png" alt="홈페이지사진" /></figure>
+
+        <div>
+          <div class="section03_text_box">
+            <div class="section03_text_L">
+              <p>사이트명</p>
+              <p>제작기간</p>
+              <p>참여</p>
+              <p>페이지</p>
+              <p>툴</p>
+            </div>
+            <div class="section03_text_R">
+              <p>F5NATURE</p>
+              <p>6일</p>
+              <p>디자인,퍼블리싱 (100%)</p>
+              <p>반응형 메인 (pc+mobile)</p>
+              <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
+            </div>
+          </div><!-- text box end -->
+
+          <span>
+            F5NATURE홈페이지를 반응형에 맞춰  <br/>
+            pc,pad,mobile로 변경하였습니다.
+            
+          </span>
+
+          <div class="section03_tag">
+            <a class="b3" href="https://cheol3967.github.io/F5NATURE/">완성된웹사이트</a>
+            <a class="b3" href="https://www.figma.com/file/tUEuv1wEXK5dq2VcheFb80/F5NATURE?type=design&node-id=45-5362&mode=design&t=1j8I9dgGwIHQh9Ks-0">피그마</a>
+          </div>
+        </div>
+      </div><!-- flex3 end 🍕🍕🍕-->
+
+      <div class="section03_flex ">
+        <figure><img src="img/KB국민카드.png" alt="홈페이지사진" /></figure>
+
+        <div>
+          <div class="section03_text_box">
+            <div class="section03_text_L">
+              <p>사이트명</p>
+              <p>제작기간</p>
+              <p>참여</p>
+              <p>페이지</p>
+              <p>툴</p>
+            </div>
+            <div class="section03_text_R">
+              <p>Scott Hamish</p>
+              <p>5일</p>
+              <p>디자인,퍼블리싱 (100%)</p>
+              <p>반응형 메인 (pc+mobile)</p>
+              <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
+            </div>
+          </div><!-- text box end -->
+
+          <span>
+            메인페이지를 블랙으로 바꾸고 제품소개 부분을 바꾸어 <br/>
+            제품을 확인하기 쉽게 리디자인하였습니다.
+          </span>
+
+          <div class="section03_tag">
+            <a class="b4" href="https://cheol3967.github.io/KBCARD/">완성된웹사이트</a>
+            <a class="b4" href="https://www.figma.com/file/70YKYRujeTFG4fveDSQXPh/KBCARD?type=design&node-id=0-1&mode=design&t=hkH1wBmswXzY0e8p-0">피그마</a>
+            <a class="b4" href="">ppt자료</a>
+          </div>
+        </div>
+      </div><!-- flex end 🍕🍕🍕🍕-->
+
+      <div class="section03_flex ">
+        <figure><img src="img/Megastudy Books.png" alt="홈페이지사진" /></figure>
+
+        <div>
+          <div class="section03_text_box">
+            <div class="section03_text_L">
+              <p>사이트명</p>
+              <p>제작기간</p>
+              <p>참여</p>
+              <p>페이지</p>
+              <p>툴</p>
+            </div>
+            <div class="section03_text_R">
+              <p>MegastudyBooks</p>
+              <p>2일</p>
+              <p>메가스터디북스 모작(100%)</p>
+              <p>메인페이지 (pc)</p>
+              <p>HTML, CSS, JavaScript</p>
+            </div>
+          </div><!-- text box end -->
+
+          <span>
+            megastudybooks 홈페이지 모작입니다. <br/>
+          </span>
+
+          <div class="section03_tag">
+            <a class="b5" href="https://cheol3967.github.io/megastudybooks/">완성된웹사이트</a>
+          </div>
+        </div>
+      </div><!-- flex end 🍕🍕🍕🍕🍕-->
+
+      <div class="section03_flex ">
+        <figure><img src="img/ba.png" alt="홈페이지사진" /></figure>
+
+        <div>
+          <div class="section03_text_box">
+            <div class="section03_text_L">
+              <p>사이트명</p>
+              <p>제작기간</p>
+              <p>참여</p>
+              <p>페이지</p>
+              <p>툴</p>
+            </div>
+            <div class="section03_text_R">
+              <p>Scott Hamish</p>
+              <p>5일</p>
+              <p>디자인,퍼블리싱 (100%)</p>
+              <p>반응형 메인 (pc+mobile)</p>
+              <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
+            </div>
+          </div><!-- text box end -->
+
+          <span>
+            메인페이지를 블랙으로 바꾸고 제품소개 부분을 바꾸어 <br/>
+            제품을 확인하기 쉽게 리디자인하였습니다.
+          </span>
+
+          <div class="section03_tag">
+            <a class="b6" href="">피그마</a>
+            <a class="b6" href="">완성된웹사이트</a>
+            <a class="b6" href="">ppt자료</a>
+          </div>
+        </div>
+      </div><!-- flex end 🍕🍕🍕🍕🍕🍕-->
+
+
+    </div>
+  </section>
+
+  <section class="section section04">
+    <h3>창원시 도서관 App Design</h3>
+    <div class="img">
+      <figure><img src="img/m1.png" alt=""></figure>
+      <figure><img src="img/m2.png" alt=""></figure>
+      <figure><img src="img/m3.png" alt=""></figure>
+      <figure><img src="img/m4.png" alt=""></figure>
+      <figure><img src="img/m5.png" alt=""></figure>
+      <figure><img src="img/m6.png" alt=""></figure>
+      <figure><img src="img/m7.png" alt=""></figure>
+      <figure><img src="img/m8.png" alt=""></figure>
+      <figure><img src="img/m9.png" alt=""></figure>
+    </div>
+    <ul>
+      <li><a href="https://www.figma.com/file/6S8STOYfUZelglZ7ONiOfj/changwonApp?type=design&node-id=2021-685&mode=design&t=HbBeNJz5InHSykEO-0">피그마</a></li>
+      <li><a href="pdf/창원시도서관APP.pdf">Process</a></li>
+    </ul>
+    <h3>App Design</h3>
+    <div class="img">
+      <figure><img src="img/m1.png" alt=""></figure>
+      <figure><img src="img/m2.png" alt=""></figure>
+      <figure><img src="img/m3.png" alt=""></figure>
+      <figure><img src="img/m4.png" alt=""></figure>
+      <figure><img src="img/m5.png" alt=""></figure>
+    </div>
+    <ul>
+      <li><a href="">피그마</a></li>
+      <li><a href="">Process</a></li>
+    </ul>
+  </section>
+
+  <section class="section section05">
+    <h3>Design</h3>
+    <ul class="section05_flex">
+      <li>
+        <figure><img src="img/sc4_1.png" alt="" /></figure>
+      </li>
+      <li>
+        <figure><img src="img/sc4_2.png" alt="" /></figure>
+      </li>
+      <li>
+        <figure><img src="img/sc4_3.png" alt="" /></figure>
+      </li>
+      <li>
+        <figure><img src="img/sc4_4.png" alt="" /></figure>
+      </li>
+      <li>
+        <figure><img src="img/sc4_5.png" alt="" /></figure>
+      </li>
+      <li>
+        <figure><img src="img/sc4_6.png" alt="" /></figure>
+      </li>
+
+    </ul>
+  </section>
+
+
 </body>
+
 </html>

@@ -1,0 +1,18 @@
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.rainbow-text {
+  font-size: 36px;
+  background-image: linear-gradient(45deg, #FF0000, #FFA500, #FFFF00, #008000, #0000FF, #800080);
+  -webkit-background-clip: text; /* 텍스트에만 그라데이션 적용 */
+  -webkit-text-fill-color: transparent; /* 텍스트 내용은 투명하게 */
+  transition: background-color 0.3s ease-in-out; /* 호버 시 전환 효과 설정 */
+}
+
+.rainbow-text:hover {
+  color: #ffffff; /* 호버 시 텍스트 색상 변경 */
+}
