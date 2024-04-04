@@ -20,10 +20,7 @@
 .section04 figure:hover {
   animation: rotate 1s ease infinite; /* 애니메이션을 적용하고 무한 반복합니다. */
 }
-.section05 li:hover{
-  transition: transform 0.5s ease;
-  transform: translate(10px, -10px); 
-}
+
 * {
   margin: 0;
   padding: 0;
@@ -581,6 +578,13 @@ margin-bottom: 200px;}
   gap: 40px;
   /* display: none; */
 }
+.section05 li{
+  transition: transform 0.5s ease;
+}
+.section05 li:hover{
+  transition: transform 0.5s ease;
+  transform: translate(10px, -10px); 
+}
 .section05 ul li{
   cursor: pointer;
 }
@@ -598,8 +602,6 @@ margin-bottom: 200px;}
 
 .section05 h3 {
   font-size: 60px;
-  padding-bottom: 100px;
-  margin-top: 0px;
   text-align: center;
 }
 .section05{
@@ -619,4 +621,26 @@ margin-bottom: 200px;}
 .end h3 span {
   opacity: 0; /* 초기에는 보이지 않음 */
   transition: opacity 0.5s ease; /* 투명도 전환 애니메이션 */
+}
+.end2 {
+  width: 50%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.end2 p {
+  font-size: 24px;
+}
+.end2 figure {
+  height: 150px;
+}
+.end2 figure img{
+  height: 100%;
+}
+.section05 > p {
+  padding: 30px;
+  color: #ffffff50;
+  text-align: center;
 }
