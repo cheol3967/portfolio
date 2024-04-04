@@ -7,8 +7,12 @@
   <title>portfolio</title>
 
   <script src="js/main.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
   <link rel="stylesheet" href="css/portfolio.css" />
-
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const sectionLinks = document.querySelectorAll(".section-link");
@@ -23,59 +27,59 @@
       });
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-    const paragraphs = document.querySelectorAll('.section03_text p');
+    document.addEventListener('DOMContentLoaded', function () {
+      const paragraphs = document.querySelectorAll('.section03_text p');
 
-    paragraphs.forEach(function(paragraph) {
-        paragraph.addEventListener('click', function() {
-            // 현재 클릭된 p 요소의 z-index 값을 가져옴
-            const currentZIndex = parseInt(window.getComputedStyle(this).getPropertyValue('z-index'));
+      paragraphs.forEach(function (paragraph) {
+        paragraph.addEventListener('click', function () {
+          // 현재 클릭된 p 요소의 z-index 값을 가져옴
+          const currentZIndex = parseInt(window.getComputedStyle(this).getPropertyValue('z-index'));
 
-            // 모든 p 요소의 z-index 값을 초기화
-            paragraphs.forEach(function(p) {
-                p.style.zIndex = 'auto';
-            });
+          // 모든 p 요소의 z-index 값을 초기화
+          paragraphs.forEach(function (p) {
+            p.style.zIndex = 'auto';
+          });
 
-            // 클릭된 p 요소가 이미 가장 위에 있는 경우에는 동작하지 않음
-            if (currentZIndex >= paragraphs.length) return;
+          // 클릭된 p 요소가 이미 가장 위에 있는 경우에는 동작하지 않음
+          if (currentZIndex >= paragraphs.length) return;
 
-            // 클릭된 p 요소의 z-index 값을 가장 높은 값으로 설정
-            this.style.zIndex = paragraphs.length;
+          // 클릭된 p 요소의 z-index 값을 가장 높은 값으로 설정
+          this.style.zIndex = paragraphs.length;
         });
+      });
     });
-});
 
-// JavaScript로 클릭 이벤트 처리
-document.addEventListener('DOMContentLoaded', function() {
-    const paragraphElements = document.querySelectorAll('.section03_text p'); // 모든 p 요소 선택
+    // JavaScript로 클릭 이벤트 처리
+    document.addEventListener('DOMContentLoaded', function () {
+      const paragraphElements = document.querySelectorAll('.section03_text p'); // 모든 p 요소 선택
 
-    paragraphElements.forEach(function(paragraph) {
-        paragraph.addEventListener('click', function() {
-            // 클릭된 p 요소의 클래스를 변경하여 이미지와 Flex 아이템의 표시 여부 조절
-            const index = parseInt(this.className.replace('b', '')) - 1; // 클래스 이름에서 숫자 추출
-            const images = document.querySelectorAll('.section03_img');
-            const flexItems = document.querySelectorAll('.section03_flex');
+      paragraphElements.forEach(function (paragraph) {
+        paragraph.addEventListener('click', function () {
+          // 클릭된 p 요소의 클래스를 변경하여 이미지와 Flex 아이템의 표시 여부 조절
+          const index = parseInt(this.className.replace('b', '')) - 1; // 클래스 이름에서 숫자 추출
+          const images = document.querySelectorAll('.section03_img');
+          const flexItems = document.querySelectorAll('.section03_flex');
 
-            // 이미지 표시 여부 설정
-            images.forEach(function(image, i) {
-                if (i === index) {
-                    image.classList.add('on');
-                } else {
-                    image.classList.remove('on');
-                }
-            });
+          // 이미지 표시 여부 설정
+          images.forEach(function (image, i) {
+            if (i === index) {
+              image.classList.add('on');
+            } else {
+              image.classList.remove('on');
+            }
+          });
 
-            // Flex 아이템의 표시 여부 설정
-            flexItems.forEach(function(item, i) {
-                if (i === index) {
-                    item.classList.add('on');
-                } else {
-                    item.classList.remove('on');
-                }
-            });
+          // Flex 아이템의 표시 여부 설정
+          flexItems.forEach(function (item, i) {
+            if (i === index) {
+              item.classList.add('on');
+            } else {
+              item.classList.remove('on');
+            }
+          });
         });
+      });
     });
-});
   </script>
 </head>
 
@@ -91,20 +95,20 @@ document.addEventListener('DOMContentLoaded', function() {
           <span>Home</span>
         </li>
         <li class="section-link" data-target=".section02">
-          <figure><img src="img/h2.png" alt="Profile" /></figure>
+          <figure><img src="img/h2_1.png" alt="Profile" /></figure>
           <span>Profile</span>
         </li>
         <li class="section-link" data-target=".section03">
-          <figure><img src="img/h3.png" alt="Web Redesign" /></figure>
+          <figure><img src="img/h4.png" alt="Web Redesign" /></figure>
           <span>Web Design</span>
         </li>
         <li class="section-link" data-target=".section04">
-          <figure><img src="img/h4.png" alt="Design" /></figure>
+          <figure><img src="img/h9.png" alt="Design" /></figure>
           <span>App Design</span>
         </li>
         <li class="section-link" data-target=".section05">
           <figure><img src="img/h5.png" alt="Thanks" /></figure>
-          <span>Design</span>
+          <span>Graphic Design</span>
         </li>
       </ul>
     </div>
@@ -114,12 +118,15 @@ document.addEventListener('DOMContentLoaded', function() {
       <img src="img/1page.png" alt="빛나는사진" />
     </div>
     <ul class="text-container">
-      <li class="hoverable-text">Welcome to my UI/UX</li>
+      <li class="hoverable-text aa">Welcome to my UI/UX</li>
       <h2 class="hoverable-text">Design Universe</h2>
-      <li class="hoverable-text">
-        새로운 우주는 무한하고 끝없는 가능성을 가지고있습니다.
+      <li class="hoverable-text xx">
+        "우주와 같이 끊임없이 변화하는 무한한 공간에서,
       </li>
-      <li class="hoverable-text">김 민 철 's Portfolio</li>
+      <li class="hoverable-text xx">
+        창의적이고 혁신적인 디자인을 통해 새로운 세계를 창조하겠습니다."
+      </li>
+      <li class="hoverable-text aa">김 민 철 's Portfolio</li>
     </ul>
   </section>
   <!-- sec01 end -->
@@ -154,18 +161,21 @@ document.addEventListener('DOMContentLoaded', function() {
         <h4>“긍정” “도전” “소통” “변화”</h4>
         <ul>
           EDUCATION
-          <li>23.02연암공과대학</li>
-          <li>23.02연암공과대학</li>
+          <li>2018.02 &nbsp;&nbsp;&nbsp;연암공과대학 졸업</li>
+          <li>2013.02 &nbsp;&nbsp;&nbsp;창원고등학교 졸업</li>
         </ul>
         <ul>
           CERTIFICATE
-          <li>ddd</li>
-          <li>ddd</li>
+          <li>2020.06.12 &nbsp;&nbsp;&nbsp;GTQ 포토샵 1급</li>
+          <li>2020.06.12 &nbsp;&nbsp;&nbsp;GTQ 일러스트 2급</li>
+          <li>2013.01.12 &nbsp;&nbsp;&nbsp;&nbsp;자동차운전면허증 1종보통</li>
+          <li>2015.12.11 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자동차정비기능사</li>
         </ul>
         <ul>
           CAREER
-          <li>sss</li>
-          <li>sss</li>
+          <li>2021.07 ~ 2022.06 &nbsp;&nbsp;&nbsp;에스케이텔레콤</li>
+          <li>2020.09 ~ 2021.06 &nbsp;&nbsp;&nbsp;KTCS</li>
+          <li>2018.02 ~ 2020.02 &nbsp;&nbsp;&nbsp;엘지유플러스          </li>
         </ul>
         <ul class="skill">
           <div>SKILL</div>
@@ -185,10 +195,19 @@ document.addEventListener('DOMContentLoaded', function() {
             <figure><img src="img/sk5.png" alt="" /></figure>
           </li>
           <li>
-            <figure><img src="img/sk6.png" alt="" /></figure>
+            <figure><img src="img/sk_6.svg" alt="" /></figure>
+          </li>
+          <li>
+            <figure><img src="img/sk_61.png" alt="" /></figure>
+          </li>
+          <li>
+            <figure><img src="img/sk_62.png" alt="" /></figure>
           </li>
           <li>
             <figure><img src="img/sk7.png" alt="" /></figure>
+          </li>
+          <li>
+            <figure><img src="img/sk8.png" alt="" /></figure>
           </li>
         </ul>
       </div>
@@ -202,12 +221,12 @@ document.addEventListener('DOMContentLoaded', function() {
     <h3>Web Design</h3>
     <div class="section03_position">
       <div class="section03_text">
-        <p class="b1">Scott<br/>Hamish</p>
-        <p class="b2">Luminous<br/>Legacy</p>
-        <p class="b3">F5NATUR</p>
-        <p class="b4">KB<br/>국민카드</p>
-        <p class="b5">Megastudy<br/>Books</p>
-        <p class="b6">Scott Hamish</p>
+        <p class="b1">Scott<br />Hamish</p>
+        <p class="b2">Luminous<br />Legacy</p>
+        <p class="b3">F5NATURE</p>
+        <p class="b4">KB<br />국민카드</p>
+        <p class="b5">부산<br />여행</p>
+        <p class="b6">Megastudy<br />Books</p>
       </div>
 
       <figure class="section03_img on">
@@ -252,13 +271,14 @@ document.addEventListener('DOMContentLoaded', function() {
           </div><!-- text box end -->
 
           <span>
-            메인페이지를 블랙으로 바꾸고 제품소개 부분을 바꾸어 <br/>
+            메인페이지를 블랙으로 바꾸고 제품소개 부분을 바꾸어 <br />
             제품을 확인하기 쉽게 리디자인하였습니다.
           </span>
 
           <div class="section03_tag">
-            <a class="b1" href="https://cheol3967.github.io/ScottHamish/">완성된웹사이트</a>
-            <a class="b1" href="https://www.figma.com/file/Ykt0ffks2YIX12OGMpXsUy/ScottHamish?type=design&node-id=0-1&mode=design&t=7Yp4qy2yGFwbFMWS-0">피그마</a>
+            <a class="b1" href="https://cheol3967.github.io/ScottHamish/">Web Site</a>
+            <a class="b1"
+              href="https://www.figma.com/file/Ykt0ffks2YIX12OGMpXsUy/ScottHamish?type=design&node-id=0-1&mode=design&t=7Yp4qy2yGFwbFMWS-0">Pigma</a>
             <a class="b1" href="PDF/scotthamish.pdf">Process</a>
           </div>
         </div>
@@ -286,13 +306,14 @@ document.addEventListener('DOMContentLoaded', function() {
           </div><!-- text box end -->
 
           <span>
-            반응형에 맞춰 pc및 pad,mobile <br/>
+            반응형에 맞춰 pc및 pad,mobile <br />
             사이트를 자체제작하였습니다.
           </span>
 
           <div class="section03_tag">
-            <a class="b2" href="https://cheol3967.github.io/LuminousLegacy/">완성된웹사이트</a>
-            <a class="b2" href="https://www.figma.com/file/R0uQox93SnTJAOquthQcOg/LuminousLegacy?type=design&node-id=0-1&mode=design&t=nwhd8EbTOsUL21tl-0">피그마</a>
+            <a class="b2" href="https://cheol3967.github.io/LuminousLegacy/">Web Site</a>
+            <a class="b2"
+              href="https://www.figma.com/file/R0uQox93SnTJAOquthQcOg/LuminousLegacy?type=design&node-id=0-1&mode=design&t=nwhd8EbTOsUL21tl-0">Pigma</a>
           </div>
         </div>
       </div><!-- flex2 end🍕🍕 -->
@@ -319,14 +340,15 @@ document.addEventListener('DOMContentLoaded', function() {
           </div><!-- text box end -->
 
           <span>
-            F5NATURE홈페이지를 반응형에 맞춰  <br/>
+            F5NATURE홈페이지를 반응형에 맞춰 <br />
             pc,pad,mobile로 변경하였습니다.
-            
+
           </span>
 
           <div class="section03_tag">
-            <a class="b3" href="https://cheol3967.github.io/F5NATURE/">완성된웹사이트</a>
-            <a class="b3" href="https://www.figma.com/file/tUEuv1wEXK5dq2VcheFb80/F5NATURE?type=design&node-id=45-5362&mode=design&t=1j8I9dgGwIHQh9Ks-0">피그마</a>
+            <a class="b3" href="https://cheol3967.github.io/F5NATURE/">Web Site</a>
+            <a class="b3"
+              href="https://www.figma.com/file/tUEuv1wEXK5dq2VcheFb80/F5NATURE?type=design&node-id=45-5362&mode=design&t=1j8I9dgGwIHQh9Ks-0">Pigma</a>
           </div>
         </div>
       </div><!-- flex3 end 🍕🍕🍕-->
@@ -344,29 +366,62 @@ document.addEventListener('DOMContentLoaded', function() {
               <p>툴</p>
             </div>
             <div class="section03_text_R">
-              <p>Scott Hamish</p>
-              <p>5일</p>
+              <p>KB 국민카드</p>
+              <p>4일</p>
               <p>디자인,퍼블리싱 (100%)</p>
-              <p>반응형 메인 (pc+mobile)</p>
+              <p>메인 pc</p>
               <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
             </div>
           </div><!-- text box end -->
 
           <span>
-            메인페이지를 블랙으로 바꾸고 제품소개 부분을 바꾸어 <br/>
+            메인페이지를 블랙으로 바꾸고 제품소개 부분을 바꾸어 <br />
             제품을 확인하기 쉽게 리디자인하였습니다.
           </span>
 
           <div class="section03_tag">
-            <a class="b4" href="https://cheol3967.github.io/KBCARD/">완성된웹사이트</a>
-            <a class="b4" href="https://www.figma.com/file/70YKYRujeTFG4fveDSQXPh/KBCARD?type=design&node-id=0-1&mode=design&t=hkH1wBmswXzY0e8p-0">피그마</a>
-            <a class="b4" href="">ppt자료</a>
+            <a class="b4" href="https://cheol3967.github.io/KBCARD/">Web Site</a>
+            <a class="b4"
+              href="https://www.figma.com/file/70YKYRujeTFG4fveDSQXPh/KBCARD?type=design&node-id=0-1&mode=design&t=hkH1wBmswXzY0e8p-0">Pigma</a>
+            <a class="b4" href="">Process</a>
           </div>
         </div>
       </div><!-- flex end 🍕🍕🍕🍕-->
 
       <div class="section03_flex ">
-        <figure><img src="img/Megastudy Books.png" alt="홈페이지사진" /></figure>
+        <figure><img src="img/busan.png" alt="홈페이지사진" /></figure>
+
+        <div>
+          <div class="section03_text_box">
+            <div class="section03_text_L">
+              <p>사이트명</p>
+              <p>제작기간</p>
+              <p>참여</p>
+              <p>페이지</p>
+              <p>툴</p>
+            </div>
+            <div class="section03_text_R">
+              <p>부산여행</p>
+              <p>1일</p>
+              <p>디자인,퍼블리싱 (100%)</p>
+              <p>메인 PAD,MOBILE</p>
+              <p>REACT, HTML, CSS</p>
+            </div>
+          </div><!-- text box end -->
+
+          <span>
+            메인 페이지를 부분 수정하여 글자 크기 조절 및 <br />
+            배치를 바꾸었습니다.
+          </span>
+
+          <div class="section03_tag">
+            <a class="b5" href="https://cheol3967.github.io/Busan/">Web Site</a>
+          </div>
+        </div>
+      </div><!-- flex end 🍕🍕🍕🍕🍕-->
+
+      <div class="section03_flex ">
+        <figure><img src="img/MegastudyBooks.png" alt="홈페이지사진" /></figure>
 
         <div>
           <div class="section03_text_box">
@@ -387,68 +442,36 @@ document.addEventListener('DOMContentLoaded', function() {
           </div><!-- text box end -->
 
           <span>
-            megastudybooks 홈페이지 모작입니다. <br/>
+            megastudybooks 홈페이지 모작입니다. <br />
           </span>
 
           <div class="section03_tag">
-            <a class="b5" href="https://cheol3967.github.io/megastudybooks/">완성된웹사이트</a>
-          </div>
-        </div>
-      </div><!-- flex end 🍕🍕🍕🍕🍕-->
-
-      <div class="section03_flex ">
-        <figure><img src="img/ba.png" alt="홈페이지사진" /></figure>
-
-        <div>
-          <div class="section03_text_box">
-            <div class="section03_text_L">
-              <p>사이트명</p>
-              <p>제작기간</p>
-              <p>참여</p>
-              <p>페이지</p>
-              <p>툴</p>
-            </div>
-            <div class="section03_text_R">
-              <p>Scott Hamish</p>
-              <p>5일</p>
-              <p>디자인,퍼블리싱 (100%)</p>
-              <p>반응형 메인 (pc+mobile)</p>
-              <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
-            </div>
-          </div><!-- text box end -->
-
-          <span>
-            메인페이지를 블랙으로 바꾸고 제품소개 부분을 바꾸어 <br/>
-            제품을 확인하기 쉽게 리디자인하였습니다.
-          </span>
-
-          <div class="section03_tag">
-            <a class="b6" href="">피그마</a>
-            <a class="b6" href="">완성된웹사이트</a>
-            <a class="b6" href="">ppt자료</a>
+            <a class="b6" href="https://cheol3967.github.io/megastudybooks/">Web Site</a>
           </div>
         </div>
       </div><!-- flex end 🍕🍕🍕🍕🍕🍕-->
-
 
     </div>
   </section>
 
   <section class="section section04">
     <h3>창원시 도서관 App Design</h3>
-    <div class="img">
-      <figure><img src="img/m1.png" alt=""></figure>
-      <figure><img src="img/m2.png" alt=""></figure>
-      <figure><img src="img/m3.png" alt=""></figure>
-      <figure><img src="img/m4.png" alt=""></figure>
-      <figure><img src="img/m5.png" alt=""></figure>
-      <figure><img src="img/m6.png" alt=""></figure>
-      <figure><img src="img/m7.png" alt=""></figure>
-      <figure><img src="img/m8.png" alt=""></figure>
-      <figure><img src="img/m9.png" alt=""></figure>
-    </div>
+    <div class="img-container">
+      <a href="img/m1.png" data-fancybox><figure><img src="img/m1.png" alt=""></figure></a>
+      <a href="img/m2.png" data-fancybox><figure><img src="img/m2.png" alt=""></figure></a>
+      <a href="img/m3.png" data-fancybox><figure><img src="img/m3.png" alt=""></figure></a>
+      <a href="img/m4.png" data-fancybox><figure><img src="img/m4.png" alt=""></figure></a>
+      <a href="img/m5.png" data-fancybox><figure><img src="img/m5.png" alt=""></figure></a>
+      <a href="img/m6.png" data-fancybox><figure><img src="img/m6.png" alt=""></figure></a>
+      <a href="img/m7.png" data-fancybox><figure><img src="img/m7.png" alt=""></figure></a>
+      <a href="img/m8.png" data-fancybox><figure><img src="img/m8.png" alt=""></figure></a>
+      <a href="img/m9.png" data-fancybox><figure><img src="img/m9.png" alt=""></figure></a>
+      <a href="img/m10.png" data-fancybox><figure><img src="img/m10.png" alt=""></figure></a>
+  </div>
     <ul>
-      <li><a href="https://www.figma.com/file/6S8STOYfUZelglZ7ONiOfj/changwonApp?type=design&node-id=2021-685&mode=design&t=HbBeNJz5InHSykEO-0">피그마</a></li>
+      <li><a
+          href="https://www.figma.com/file/6S8STOYfUZelglZ7ONiOfj/changwonApp?type=design&node-id=2021-685&mode=design&t=HbBeNJz5InHSykEO-0">Pigma</a>
+      </li>
       <li><a href="pdf/창원시도서관APP.pdf">Process</a></li>
     </ul>
     <h3>App Design 다른디자인 바꿀예정</h3>
@@ -458,36 +481,61 @@ document.addEventListener('DOMContentLoaded', function() {
       <figure><img src="img/m3.png" alt=""></figure>
       <figure><img src="img/m4.png" alt=""></figure>
       <figure><img src="img/m5.png" alt=""></figure>
+      <figure><img src="img/m2.png" alt=""></figure>
+      <figure><img src="img/m3.png" alt=""></figure>
+      <figure><img src="img/m4.png" alt=""></figure>
+      <figure><img src="img/m5.png" alt=""></figure>
     </div>
     <ul>
-      <li><a href="">피그마</a></li>
+      <li><a href="">Pigma</a></li>
       <li><a href="">Process</a></li>
     </ul>
   </section>
 
   <section class="section section05">
-    <h3>Design</h3>
+    <h3>Graphic Design</h3>
     <ul class="section05_flex">
       <li>
-        <figure><img src="img/sc4_1.png" alt="" /></figure>
+        
+Illustration
+        <figure><img src="img/sc4_1.png"data-fancybox alt="" /></figure>
       </li>
       <li>
-        <figure><img src="img/sc4_2.png" alt="" /></figure>
+        
+Illustration
+        <figure><img src="img/sc4_2.png"data-fancybox alt="" /></figure>
       </li>
       <li>
-        <figure><img src="img/sc4_3.png" alt="" /></figure>
+        
+Illustration
+        <figure><img src="img/sc4_3.png"data-fancybox alt="" /></figure>
       </li>
       <li>
-        <figure><img src="img/sc4_4.png" alt="" /></figure>
+        Photoshop
+        <figure><img src="img/sc4_4.png"data-fancybox alt="" /></figure>
       </li>
       <li>
-        <figure><img src="img/sc4_5.png" alt="" /></figure>
+        Photoshop
+        <figure><img src="img/sc4_5.png"data-fancybox alt="" /></figure>
       </li>
       <li>
-        <figure><img src="img/sc4_6.png" alt="" /></figure>
+        Photoshop
+        <figure><img src="img/sc4_6.png"data-fancybox alt="" /></figure>
+      </li>
+      <li>
+        Photoshop
+        <figure><img src="img/sc4_8.jpg"data-fancybox alt="" /></figure>
+      </li>
+      <li>
+        Photoshop
+        <figure><img src="img/sc4_9.png"data-fancybox alt="" /></figure>
+      </li>
+      <li>
+        Figma
+        <figure><img src="img/sc4_7.png"data-fancybox alt="" /></figure>
       </li>
       <div>
-        <h3>Thanks 위아래로기타추가예정</h3>
+        <h3>Thanks</h3>
       </div>
     </ul>
   </section>
