@@ -526,9 +526,9 @@ line-height: 1.6;
   justify-content: center;
   margin: 0 auto;
   gap: 80px;
+  row-gap: 160px;
 }
 .section04 .img-container a {
-  
   width: 15.8%;
 }
 .section04 .img-container a figure{
@@ -539,7 +539,7 @@ line-height: 1.6;
 }
 
 .section04 ul {
-  margin-top: 100px;
+  margin-top: 160px;
   display: flex;
   gap :20px;
   justify-content: center;
@@ -581,7 +581,9 @@ margin-bottom: 200px;}
   gap: 40px;
   /* display: none; */
 }
-
+.section05 ul li{
+  cursor: pointer;
+}
 .section05 ul li figure {
   width: 29vw;
   height: 29vw;
@@ -596,10 +598,25 @@ margin-bottom: 200px;}
 
 .section05 h3 {
   font-size: 60px;
-  padding: 100px;
-  margin-top: 60px;
+  padding-bottom: 100px;
+  margin-top: 0px;
   text-align: center;
 }
 .section05{
   font-size: 20px;
+}
+.end{
+  margin: 0 auto;
+  padding: 200px;
+}
+.end h3 {
+  font-size: 60px; /* 글자 크기 조절 */
+  text-align: center;
+  overflow: hidden; /* 글자 숨김 */
+  white-space: nowrap; /* 한 줄에 표시되도록 설정 */
+}
+
+.end h3 span {
+  opacity: 0; /* 초기에는 보이지 않음 */
+  transition: opacity 0.5s ease; /* 투명도 전환 애니메이션 */
 }

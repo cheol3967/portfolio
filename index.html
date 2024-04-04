@@ -7,11 +7,9 @@
   <title>portfolio</title>
 
   <script src="js/main.js"></script>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
   <link rel="stylesheet" href="css/portfolio.css" />
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -79,6 +77,50 @@
           });
         });
       });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var h3 = document.querySelector(".end h3");
+      var text = h3.textContent;
+      h3.textContent = ""; // 내용을 비워줌
+
+      // 각 글자마다 span 요소를 생성하여 적용
+      for (var i = 0; i < text.length; i++) {
+        var span = document.createElement("span");
+        span.textContent = text[i];
+        h3.appendChild(span);
+      }
+
+      // 스크롤 이벤트를 등록하여 마지막 부분이 화면에 보일 때 애니메이션 시작
+      var endReached = false; // 마지막 부분에 도달했는지 여부를 확인하는 변수
+      window.addEventListener("scroll", function () {
+        // 페이지 맨 아래에 도달했는지 확인
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+          if (!endReached) {
+            endReached = true;
+            // 각 span 요소에 대해 순차적으로 opacity를 1로 변경하여 나타나도록 함
+            var spans = document.querySelectorAll(".end h3 span");
+            for (var i = 0; i < spans.length; i++) {
+              (function (index) {
+                setTimeout(function () {
+                  spans[index].style.opacity = "1";
+                }, 100 * index); // 100ms 간격으로 나타나도록 설정
+              })(i);
+            }
+          }
+        }
+      });
+
+      // 요소가 화면 안에 있는지 확인하는 함수
+      function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
     });
   </script>
 </head>
@@ -175,7 +217,7 @@
           CAREER
           <li>2021.07 ~ 2022.06 &nbsp;&nbsp;&nbsp;에스케이텔레콤</li>
           <li>2020.09 ~ 2021.06 &nbsp;&nbsp;&nbsp;KTCS</li>
-          <li>2018.02 ~ 2020.02 &nbsp;&nbsp;&nbsp;엘지유플러스          </li>
+          <li>2018.02 ~ 2020.02 &nbsp;&nbsp;&nbsp;엘지유플러스 </li>
         </ul>
         <ul class="skill">
           <div>SKILL</div>
@@ -225,8 +267,8 @@
         <p class="b2">Luminous<br />Legacy</p>
         <p class="b3">F5NATURE</p>
         <p class="b4">KB<br />국민카드</p>
-        <p class="b5">부산<br />여행</p>
         <p class="b6">Megastudy<br />Books</p>
+        <p class="b5">부산<br />여행</p>
       </div>
 
       <figure class="section03_img on">
@@ -249,6 +291,7 @@
       </figure>
 
 
+
       <div class="section03_flex on">
         <figure><img src="img/ba.png" alt="홈페이지사진" /></figure>
 
@@ -265,7 +308,7 @@
               <p>Scott Hamish</p>
               <p>5일</p>
               <p>디자인,퍼블리싱 (100%)</p>
-              <p>반응형 메인 (pc+mobile)</p>
+              <p>반응형 메인(pc+mobile)</p>
               <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
             </div>
           </div><!-- text box end -->
@@ -300,14 +343,13 @@
               <p>LuminousLegacy</p>
               <p>5일</p>
               <p>디자인,퍼블리싱 (100%)</p>
-              <p>반응형 메인 (pc+mobile)</p>
+              <p>반응형 메인(pc+mobile)</p>
               <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
             </div>
           </div><!-- text box end -->
 
           <span>
-            반응형에 맞춰 pc및 pad,mobile <br />
-            사이트를 자체제작하였습니다.
+            반응형으로(pc,pad,mobile)페이지를 자체 제작 하였습니다.
           </span>
 
           <div class="section03_tag">
@@ -334,14 +376,13 @@
               <p>F5NATURE</p>
               <p>6일</p>
               <p>디자인,퍼블리싱 (100%)</p>
-              <p>반응형 메인 (pc+mobile)</p>
+              <p>반응형 메인(pc+mobile)</p>
               <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
             </div>
           </div><!-- text box end -->
 
           <span>
-            F5NATURE홈페이지를 반응형에 맞춰 <br />
-            pc,pad,mobile로 변경하였습니다.
+            F5NATURE홈페이지를 반응형(pc,pad,mobile)으로 변경하였습니다.
 
           </span>
 
@@ -369,21 +410,20 @@
               <p>KB 국민카드</p>
               <p>4일</p>
               <p>디자인,퍼블리싱 (100%)</p>
-              <p>메인 pc</p>
+              <p>메인(pc)</p>
               <p>photoshop, illustrator, figma, HTML, CSS, JavaScript</p>
             </div>
           </div><!-- text box end -->
 
           <span>
-            메인페이지를 블랙으로 바꾸고 제품소개 부분을 바꾸어 <br />
-            제품을 확인하기 쉽게 리디자인하였습니다.
+            시작 메인 동영상으로 눈을 사로잡고 틈틈이 호버효과를 추가하였습니다.
           </span>
 
           <div class="section03_tag">
             <a class="b4" href="https://cheol3967.github.io/KBCARD/">Web Site</a>
             <a class="b4"
               href="https://www.figma.com/file/70YKYRujeTFG4fveDSQXPh/KBCARD?type=design&node-id=0-1&mode=design&t=hkH1wBmswXzY0e8p-0">Pigma</a>
-            <a class="b4" href="">Process</a>
+            <a class="b4" href="pdf/국민카드.pdf">Process</a>
           </div>
         </div>
       </div><!-- flex end 🍕🍕🍕🍕-->
@@ -404,14 +444,13 @@
               <p>부산여행</p>
               <p>1일</p>
               <p>디자인,퍼블리싱 (100%)</p>
-              <p>메인 PAD,MOBILE</p>
+              <p>메인(pad,mobile)</p>
               <p>REACT, HTML, CSS</p>
             </div>
           </div><!-- text box end -->
 
           <span>
-            메인 페이지를 부분 수정하여 글자 크기 조절 및 <br />
-            배치를 바꾸었습니다.
+            리엑트를 사용하여 PAD,MOBILE 페이지를 자체 제작 하였습니다.
           </span>
 
           <div class="section03_tag">
@@ -436,7 +475,7 @@
               <p>MegastudyBooks</p>
               <p>2일</p>
               <p>메가스터디북스 모작(100%)</p>
-              <p>메인페이지 (pc)</p>
+              <p>메인페이지(pc)</p>
               <p>HTML, CSS, JavaScript</p>
             </div>
           </div><!-- text box end -->
@@ -451,91 +490,96 @@
         </div>
       </div><!-- flex end 🍕🍕🍕🍕🍕🍕-->
 
+
     </div>
   </section>
 
   <section class="section section04">
     <h3>창원시 도서관 App Design</h3>
     <div class="img-container">
-      <a href="img/m1.png" data-fancybox><figure><img src="img/m1.png" alt=""></figure></a>
-      <a href="img/m2.png" data-fancybox><figure><img src="img/m2.png" alt=""></figure></a>
-      <a href="img/m3.png" data-fancybox><figure><img src="img/m3.png" alt=""></figure></a>
-      <a href="img/m4.png" data-fancybox><figure><img src="img/m4.png" alt=""></figure></a>
-      <a href="img/m5.png" data-fancybox><figure><img src="img/m5.png" alt=""></figure></a>
-      <a href="img/m6.png" data-fancybox><figure><img src="img/m6.png" alt=""></figure></a>
-      <a href="img/m7.png" data-fancybox><figure><img src="img/m7.png" alt=""></figure></a>
-      <a href="img/m8.png" data-fancybox><figure><img src="img/m8.png" alt=""></figure></a>
-      <a href="img/m9.png" data-fancybox><figure><img src="img/m9.png" alt=""></figure></a>
-      <a href="img/m10.png" data-fancybox><figure><img src="img/m10.png" alt=""></figure></a>
-  </div>
+      <a href="img/m1.png" data-fancybox>
+        <figure><img src="img/m1.png" alt=""></figure>
+      </a>
+      <a href="img/m3.png" data-fancybox>
+        <figure><img src="img/m3.png" alt=""></figure>
+      </a>
+      <a href="img/m2.png" data-fancybox>
+        <figure><img src="img/m2.png" alt=""></figure>
+      </a>
+      <a href="img/m4.png" data-fancybox>
+        <figure><img src="img/m4.png" alt=""></figure>
+      </a>
+      <a href="img/m5.png" data-fancybox>
+        <figure><img src="img/m5.png" alt=""></figure>
+      </a>
+      <a href="img/m6.png" data-fancybox>
+        <figure><img src="img/m6.png" alt=""></figure>
+      </a>
+      <a href="img/m7.png" data-fancybox>
+        <figure><img src="img/m7.png" alt=""></figure>
+      </a>
+      <a href="img/m8.png" data-fancybox>
+        <figure><img src="img/m8.png" alt=""></figure>
+      </a>
+      <a href="img/m9.png" data-fancybox>
+        <figure><img src="img/m9.png" alt=""></figure>
+      </a>
+      <a href="img/m10.png" data-fancybox>
+        <figure><img src="img/m10.png" alt=""></figure>
+      </a>
+    </div>
     <ul>
       <li><a
           href="https://www.figma.com/file/6S8STOYfUZelglZ7ONiOfj/changwonApp?type=design&node-id=2021-685&mode=design&t=HbBeNJz5InHSykEO-0">Pigma</a>
       </li>
       <li><a href="pdf/창원시도서관APP.pdf">Process</a></li>
     </ul>
-    <h3>App Design 다른디자인 바꿀예정</h3>
-    <div class="img-container">
-      <a href="img/m1.png" data-fancybox><figure><img src="img/m1.png" alt=""></figure></a>
-      <a href="img/m2.png" data-fancybox><figure><img src="img/m2.png" alt=""></figure></a>
-      <a href="img/m3.png" data-fancybox><figure><img src="img/m3.png" alt=""></figure></a>
-      <a href="img/m4.png" data-fancybox><figure><img src="img/m4.png" alt=""></figure></a>
-      <a href="img/m5.png" data-fancybox><figure><img src="img/m5.png" alt=""></figure></a>
-      <a href="img/m6.png" data-fancybox><figure><img src="img/m6.png" alt=""></figure></a>
-      <a href="img/m7.png" data-fancybox><figure><img src="img/m7.png" alt=""></figure></a>
-      <a href="img/m8.png" data-fancybox><figure><img src="img/m8.png" alt=""></figure></a>
-      <a href="img/m9.png" data-fancybox><figure><img src="img/m9.png" alt=""></figure></a>
-      <a href="img/m10.png" data-fancybox><figure><img src="img/m10.png" alt=""></figure></a>
-    </div>
-    <ul>
-      <li><a href="">Pigma</a></li>
-    </ul>
+    
   </section>
 
   <section class="section section05">
     <h3>Graphic Design</h3>
     <ul class="section05_flex">
       <li>
-        
-Illustration
-        <figure><img src="img/sc4_1.png"data-fancybox alt="" /></figure>
+        Illustration
+        <figure><img src="img/sc4_1.png" data-fancybox alt="" /></figure>
       </li>
       <li>
-        
-Illustration
-        <figure><img src="img/sc4_2.png"data-fancybox alt="" /></figure>
+
+        Illustration
+        <figure><img src="img/sc4_2.png" data-fancybox alt="" /></figure>
       </li>
       <li>
-        
-Illustration
-        <figure><img src="img/sc4_3.png"data-fancybox alt="" /></figure>
-      </li>
-      <li>
-        Photoshop
-        <figure><img src="img/sc4_4.png"data-fancybox alt="" /></figure>
+
+        Illustration
+        <figure><img src="img/sc4_3.png" data-fancybox alt="" /></figure>
       </li>
       <li>
         Photoshop
-        <figure><img src="img/sc4_5.png"data-fancybox alt="" /></figure>
+        <figure><img src="img/sc4_4.png" data-fancybox alt="" /></figure>
       </li>
       <li>
         Photoshop
-        <figure><img src="img/sc4_6.png"data-fancybox alt="" /></figure>
+        <figure><img src="img/sc4_5.png" data-fancybox alt="" /></figure>
       </li>
       <li>
         Photoshop
-        <figure><img src="img/sc4_8.jpg"data-fancybox alt="" /></figure>
+        <figure><img src="img/sc4_6.png" data-fancybox alt="" /></figure>
       </li>
       <li>
         Photoshop
-        <figure><img src="img/sc4_9.png"data-fancybox alt="" /></figure>
+        <figure><img src="img/sc4_8.jpg" data-fancybox alt="" /></figure>
+      </li>
+      <li>
+        Photoshop
+        <figure><img src="img/sc4_9.png" data-fancybox alt="" /></figure>
       </li>
       <li>
         Figma
-        <figure><img src="img/sc4_7.png"data-fancybox alt="" /></figure>
+        <figure><img src="img/sc4_7.png" data-fancybox alt="" /></figure>
       </li>
-      <div>
-        <h3>Thanks</h3>
+      <div class="end">
+        <h3>Thank you for seeing my new world. </h3>
       </div>
     </ul>
   </section>
