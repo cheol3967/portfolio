@@ -70,7 +70,6 @@ body {
   z-index: 10;
 }
 .header .inner figure{ cursor: pointer;}
-
 .header ul {
   display: flex;
   gap: 40px;
@@ -521,9 +520,11 @@ line-height: 1.6;
 }
 
 .section04 .img-container {
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
   gap: 80px;
 }
 .section04 .img-container a {
