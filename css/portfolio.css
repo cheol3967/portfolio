@@ -73,6 +73,9 @@ body {
   justify-content: space-between;
   font-size: 26px;
 }
+.header .inner ul li:nth-child(4){
+  display: none;
+}
 .hoverable-text{
   text-align: center;
 }
@@ -931,5 +934,11 @@ margin-bottom: 200px;}
             font-size: 13px;
             margin-top: 7px;
             word-break: keep-all;
+          }
+          .header .inner ul li:nth-child(4){
+            display: block;
+          }
+          .header .inner ul li:nth-child(3){
+            display: none;
           }
 }
